@@ -1,13 +1,13 @@
 {
-  "name": "rain-ui",
+  "name": "rain-ui-zzy",
   "private": false,
-  "version": "0.0.1",
-  "main": "./dist/rain-ui.umd.js",
-  "module": "./dist/rain-ui.es.js",
+  "version": "0.0.3",
+  "main": "./dist/rain-ui-zzy.umd.js",
+  "module": "./dist/rain-ui-zzy.es.js",
   "exports": {
     ".": {
-      "import": "./dist/rain-ui.es.js",
-      "require": "./dist/rain-ui.umd.js"
+      "import": "./dist/rain-ui-zzy.es.js",
+      "require": "./dist/rain-ui-zzy.umd.js"
     }
   },
   "files": [
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "rain-ui-zzy": "^0.0.3",
     "sass": "^1.52.1",
     "vite": "^2.9.9"
   }

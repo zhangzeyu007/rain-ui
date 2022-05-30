@@ -1,6 +1,14 @@
+<!--
+ * @Description: 
+ * @Author: 张泽雨
+ * @Date: 2022-05-30 08:31:51
+ * @LastEditors: 张泽雨
+ * @LastEditTime: 2022-05-30 14:52:32
+ * @FilePath: \rain-ui\README.md
+-->
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+#### 基于vue3 UI组件库
 
 ## Recommended IDE Setup
 
