@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-30 08:31:51
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-30 18:10:31
+ * @LastEditTime: 2022-05-30 21:41:16
  * @FilePath: \rain-ui\src\App.vue
 -->
 <script setup></script>
@@ -16,6 +16,8 @@
     <r-button type="success" size="medium" disabled>默认按钮</r-button>
     <r-button type="danger" size="medium" disabled>默认按钮</r-button>
     <r-input v-model="val"></r-input>
+    <r-input v-model="val" size="small"></r-input>
+    <r-input v-model="val" size="mini"></r-input>
     <h1>{{ val }}</h1>
   </div>
 </template>
