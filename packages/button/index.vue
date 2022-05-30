@@ -3,14 +3,16 @@
  * @Author: 张泽雨
  * @Date: 2022-05-30 08:43:58
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-30 13:21:29
+ * @LastEditTime: 2022-05-30 18:20:53
  * @FilePath: \rain-ui\packages\button\index.vue
 -->
 
 <template>
-  <div :class="rClass">
-    <button><slot></slot></button>
-  </div>
+  <button :class="isClass" :style="styles">
+    <i>
+      <span><slot></slot></span>
+    </i>
+  </button>
 </template>
 <script>
 export default {
@@ -27,67 +29,132 @@ const props = defineProps({
   circle: {
     type: Boolean,
   },
+  disabled: Boolean,
+  size: {
+    type: String,
+    default: "default",
+  },
 });
+const mBtnDeaultStyle = {
+  background: props.customColor,
+  border: props.customColor,
+};
 
-const rClass = computed(() => {
+const isClass = computed(() => {
   return [
     "r-button",
-    `r-button-${props.type}`,
+    props.size == "medium"
+      ? "r-button-medium"
+      : props.size == "small"
+      ? "r-button-small"
+      : props.size == "mini"
+      ? "r-button-mini"
+      : "r-button",
+    props.type ? `r-button-${props.type}` : "",
+    props.disabled ? `is-disabled` : "",
     props.circle ? "is-circle" : "",
+  ];
+});
+const styles = computed(() => {
+  return [
+    props.customColor == ""
+      ? {}
+      : props.type == "default"
+      ? {}
+      : mBtnDeaultStyle,
   ];
 });
 </script>
 <style lang="scss" scoped>
-button {
+.r-button {
   display: inline-block;
+  margin-left: 10px;
   outline: none;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  font-size: 14px;
   background-color: #fff;
   color: #606266;
+  border: 1px solid #dcdfe6;
+  font-size: 14px;
   font-weight: 500;
   box-sizing: border-box;
-  margin: 0;
+  margin-left: 10px;
   text-align: center;
   transition: 0.1s;
-}
-.r-button {
-  display: inline-block;
-  margin-left: 10px;
-  button {
-    padding: 12px 20px;
-    border-radius: 4px;
-    border: 1px solid #dcdfe6;
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
+  padding: 12px 20px;
+  border-radius: 4px;
+  i {
+  }
+  span {
+    display: inline-block;
   }
 }
+.r-button-small {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.r-button-mini {
+  padding: 7px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.r-button-medium {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
 .r-button-default {
-  button {
-    background-color: #fff;
+  background-color: #fff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+    background-color: #ecf5ff;
+  }
+}
+.r-button-primary {
+  background-color: #409eff;
+  border-color: #409eff;
+  color: #fff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }
 .r-button-success {
-  button {
-    background-color: #67c23a;
-    border-color: #67c23a;
-    color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+  color: #fff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }
 .r-button-warning {
-  button {
-    background-color: #e6a23c;
-    border-color: #e6a23c;
-    color: #fff;
+  background-color: #e6a23c;
+  border-color: #e6a23c;
+  color: #fff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+.r-button-danger {
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+  color: #fff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }
 .is-circle {
-  button {
-    border-radius: 20px;
-  }
+  border-radius: 20px;
+}
+.is-disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-image: none;
 }
 </style>
