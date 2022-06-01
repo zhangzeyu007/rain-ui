@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-30 13:32:06
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-30 21:48:52
+ * @LastEditTime: 2022-05-30 22:53:53
  * @FilePath: \rain-ui\packages\input\index.vue
 -->
 
@@ -57,6 +57,7 @@ const props = defineProps({
 });
 
 const slot = useSlots();
+
 const iptChange = (e) => {
   emit("update:modelValue", e.target.value);
   emit("input", e.target.value);
@@ -90,6 +91,11 @@ const isClass = computed(() => {
 });
 </script>
 
+<style>
+@import url("../../styles/iconfont.css");
+@import url("../../styles/main.css");
+</style>
+
 <style lang="scss" scoped>
 .r-input {
   position: relative;
@@ -110,6 +116,18 @@ const isClass = computed(() => {
     transition: 0.2s;
     width: 100%;
   }
+  .clearable-icon {
+    font-size: 13px;
+    top: 8px;
+  }
+  .clearable-icon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #94969b;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
   .r-input__inner::placeholder {
     color: #c6c8cc;
     font-size: 14px;
@@ -121,6 +139,10 @@ const isClass = computed(() => {
   .r-input-mini {
     height: 28px;
     line-height: 28px;
+  }
+  .r-input-medium {
+    height: 36px;
+    line-height: 36px;
   }
 }
 </style>

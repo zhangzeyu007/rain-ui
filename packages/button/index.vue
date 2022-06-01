@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-30 08:43:58
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-30 18:20:53
+ * @LastEditTime: 2022-06-01 13:15:15
  * @FilePath: \rain-ui\packages\button\index.vue
 -->
 
@@ -65,6 +65,10 @@ const styles = computed(() => {
   ];
 });
 </script>
+<style>
+@import url("../../styles/iconfont.css");
+@import url("../../styles/main.css");
+</style>
 <style lang="scss" scoped>
 .r-button {
   display: inline-block;
