@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-30 08:43:58
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-06-01 13:15:15
+ * @LastEditTime: 2022-06-12 16:39:14
  * @FilePath: \rain-ui\packages\button\index.vue
 -->
 
@@ -19,6 +19,7 @@ export default {
   name: "rButton",
 };
 </script>
+
 <script setup>
 import { computed } from "vue";
 const props = defineProps({
@@ -35,6 +36,7 @@ const props = defineProps({
     default: "default",
   },
 });
+
 const mBtnDeaultStyle = {
   background: props.customColor,
   border: props.customColor,
@@ -65,10 +67,12 @@ const styles = computed(() => {
   ];
 });
 </script>
+
 <style>
 @import url("../../styles/iconfont.css");
 @import url("../../styles/main.css");
 </style>
+
 <style lang="scss" scoped>
 .r-button {
   display: inline-block;
